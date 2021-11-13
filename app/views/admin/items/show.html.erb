@@ -1,0 +1,8 @@
+<div>
+    <p>商品名:<%= @item.name%></p>
+    <%= attachment_image_tag @item, :image, :fill, 100, 100, format:'jpeg', fallback:"no_image.jpg" %>
+    <p>商品説明:<%= @item.introduction %></p>
+    <p>価格(税抜き):<%= @item.price %></p>
+    <%= link_to "編集", edit_admin_item_path %>
+    <%= link_to "一覧", admin_items_path %>
+  </div>
