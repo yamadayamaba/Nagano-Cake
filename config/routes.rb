@@ -6,6 +6,11 @@ Rails.application.routes.draw do
     registrations: 'customers/registrations'
   }
   get'customers' => 'public/customers#show', as: 'customers'
+  namespace :customers do
+  resources :addresses, only:[:index, :edit, :create, :update, :destoroy]
+  resources :cart_items, only:[:index, :create, :destroy]
+  resources :orders, only:[:new, :create, :index, :show]
+  end
 namespace :admin do
     get'/' => 'homes#top'
     resources :genres, only:[:index, :edit]
