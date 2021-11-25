@@ -28,7 +28,7 @@ namespace :admin do
     get'about' => 'public/homes#about', as: 'about'
     get'customers/leave' => 'public/customers#leave', as: 'customer_leave'
     patch'customer/resign' => 'public/customers#resign', as: 'resign'
-  devise_for :admin, controllers: {
+  devise_for :admins, controllers: {
     sessions: 'admin/sessions',
     passwords: 'admin/passwords',
     registrations: 'admin/registrations'
